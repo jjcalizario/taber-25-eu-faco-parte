@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Proxima Nova: fonte oficial da campanha.
+   1) Se houver kit Adobe Fonts (NEXT_PUBLIC_ADOBE_FONTS_KIT), ele fornece "proxima-nova".
+   2) Se a igreja tiver a licença webfont, coloque os .woff2 em /public/fonts (ver README).
+   3) Sem nenhum dos dois, cai para Montserrat, a alternativa gratuita mais próxima. */
+@font-face { font-family: "Proxima Nova"; font-weight: 400; font-display: swap; src: local("Proxima Nova"), local("ProximaNova-Regular"), url("/fonts/ProximaNova-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Proxima Nova"; font-weight: 600; font-display: swap; src: local("Proxima Nova Semibold"), local("ProximaNova-Semibold"), url("/fonts/ProximaNova-Semibold.woff2") format("woff2"); }
+@font-face { font-family: "Proxima Nova"; font-weight: 800; font-display: swap; src: local("Proxima Nova Extrabold"), local("ProximaNova-Extrabld"), url("/fonts/ProximaNova-Extrabold.woff2") format("woff2"); }
+@font-face { font-family: "Proxima Nova"; font-weight: 900; font-display: swap; src: local("Proxima Nova Black"), local("ProximaNova-Black"), url("/fonts/ProximaNova-Black.woff2") format("woff2"); }
+
+:root {
+  --font-proxima: "proxima-nova", "Proxima Nova", "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --vinho: #2e1729;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { font-family: var(--font-proxima); }
+
+:focus-visible { outline: 3px solid #edbd81; outline-offset: 3px; }
+.painel :focus-visible { outline-color: #a6546a; }
+
+/* ---------- Superfície da campanha (página pública) ---------- */
+.superficie-25 {
+  background-color: #a6546a;
+  background-image: url("/brand/cores-25-mobile.jpg");
+  background-size: cover;
+  background-position: 30% 50%;
+}
+@media (min-width: 900px) {
+  .superficie-25 { background-image: url("/brand/cores-25.jpg"); }
+}
+.superficie-25[data-categoria="gratidao"] { background-position: 92% 20%; }
+.superficie-25[data-categoria="milagre"] { background-position: 4% 20%; }
+.superficie-25[data-categoria="transformacao"] { background-position: 45% 90%; }
+
+/* ---------- Tela de LED ---------- */
+.tv-camada {
+  position: absolute; inset: -6%;
+  background: url("/brand/cores-25.jpg") no-repeat;
+  background-size: auto 100%;
+  opacity: 0;
+  transition: opacity calc(var(--t, 1200ms) * 1.8) ease-in-out;
+  will-change: opacity, transform;
+}
+.tv-camada[data-ativa="true"] { opacity: 1; }
+/* cada experiência "mora" numa região do degradê oficial */
+.tv-camada[data-cat="milagre"]       { background-position: 0% 0%;   transform: scale(1.12); transform-origin: 0% 0%; }
+.tv-camada[data-cat="gratidao"]      { background-position: 100% 0%; transform: scale(1.12); transform-origin: 100% 0%; }
+.tv-camada[data-cat="transformacao"] { background-position: 40% 100%; transform: scale(1.5); transform-origin: 45% 100%; }
+.tv-camada[data-cat="neutro"]        { background-position: 50% 50%; transform: scale(1.08); }
+
+@keyframes tv-deriva { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-1.5%, 1%, 0) scale(1.04); } }
+.tv-deriva { position: absolute; inset: 0; animation: tv-deriva 48s ease-in-out infinite alternate; }
+
+.tv-anim { transition: opacity var(--t, 1200ms) ease, transform var(--t, 1200ms) cubic-bezier(.2,.7,.2,1); }
+[data-fase="entrada"] .tv-anim { opacity: 0; transform: translateY(26px); }
+[data-fase="visivel"] .tv-anim { opacity: 1; transform: none; }
+[data-fase="saida"]   .tv-anim { opacity: 0; transform: translateY(-14px); transition-delay: 0ms !important; }
+[data-fase="visivel"] .tv-atraso-1 { transition-delay: calc(var(--t, 1200ms) * .3); }
+[data-fase="visivel"] .tv-atraso-2 { transition-delay: calc(var(--t, 1200ms) * .6); }
+[data-fase="entrada"] .tv-foto { transform: scale(.965); }
+
+@media (prefers-reduced-motion: reduce) {
+  .tv-deriva { animation: none; }
+  .tv-anim { transform: none !important; }
+}

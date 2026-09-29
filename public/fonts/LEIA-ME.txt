@@ -1,0 +1,12 @@
+Proxima Nova (fonte oficial da campanha)
+
+Opção A — Adobe Fonts: crie um projeto web com Proxima Nova (400, 600, 800, 900)
+e coloque o ID do kit em NEXT_PUBLIC_ADOBE_FONTS_KIT.
+
+Opção B — Licença webfont própria: coloque aqui os arquivos com estes nomes exatos:
+  ProximaNova-Regular.woff2
+  ProximaNova-Semibold.woff2
+  ProximaNova-Extrabold.woff2
+  ProximaNova-Black.woff2
+
+Sem nenhuma das duas, o sistema usa Montserrat automaticamente.
