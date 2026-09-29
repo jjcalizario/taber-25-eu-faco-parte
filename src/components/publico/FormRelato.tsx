@@ -245,13 +245,12 @@ export function FormRelato({ categoria, pergunta, dica }: { categoria: Categoria
             className="mt-0.5 h-6 w-6 shrink-0 accent-malva"
           />
           <span className="text-[0.95rem] leading-snug">
-            Autorizo o Tabernáculo de Davi a utilizar este relato nos telões da igreja e em materiais relacionados à
-            celebração dos 25 anos.{foto ? " Isso inclui a foto enviada." : ""}
+            Autorizo o Tabernáculo de Davi a utilizar este relato nos telões e em materiais de comunicação da igreja, incluindo a celebração dos 25 anos.
+{foto ? " Isso inclui a foto enviada." : ""}
           </span>
         </label>
         {!autorizacao ? (
           <p className="px-1 text-sm text-vinho/75">
-            Sem a autorização, a equipe lê o seu relato, mas ele não aparece nos telões.
           </p>
         ) : null}
       </fieldset>

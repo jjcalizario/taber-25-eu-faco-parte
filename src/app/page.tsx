@@ -49,9 +49,9 @@ export default function Inicio() {
       </section>
 
       <p className="mt-12 text-[1.05rem] font-extrabold leading-snug">
-        25 anos. Uma história que continua sendo escrita.
+        23 a 25 de Outubro
         <br />
-        <span className="font-normal text-white/90">E você faz parte dela.</span>
+        <span className="font-normal text-white/90"></span>
       </p>
     </Moldura>
   );
