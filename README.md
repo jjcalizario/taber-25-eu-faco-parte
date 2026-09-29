@@ -74,20 +74,6 @@ O QR Code final aponta para `https://seudominio/25anos`. Baixe em alta resoluç�
 
 ---
 
-## Decisões importantes
-
-**Fotos.** São reduzidas no celular antes do envio e reprocessadas no servidor, que remove todos os metadados (inclusive localização GPS). Ficam num bucket privado; a `/tv` só consegue buscar a foto de relatos liberados. A equipe pode ocultar a foto de um relato, apagar a foto ou desligar todas as fotos do telão.
-
-**Textos longos.** O sistema reduz a fonte em cinco tamanhos; se ainda não couber, divide o relato em telas por frases, sem cortar nem mudar palavras, com indicador de página. A prévia do LED no painel mostra quantas telas o relato vai ocupar, para a equipe decidir se encurta.
-
-**Edição.** O texto original enviado é guardado para sempre (`relato_original`) e pode ser consultado ou restaurado. Só o texto exibido é editado.
-
-**Anônimo.** O nome pode ficar vazio; no telão aparece "— Anônimo".
-
-**Autorização (LGPD).** A caixa vem desmarcada. Sem ela o relato é salvo e lido pela equipe, mas nunca vai ao telão. Para pedidos de remoção, use **Excluir relato** (apaga relato e foto).
-
-**Segurança.** RLS ativa em todas as tabelas (o público não lê nem grava nada direto); rotas do painel protegidas por login + lista de e-mails; validação e limpeza de texto no servidor; campo-armadilha e tempo mínimo contra robôs; limite de envios por aparelho; confirmação para rejeitar, arquivar, apagar foto e excluir.
-
 **Limite de upload na Vercel.** O corpo da requisição tem limite de ~4,5 MB; por isso a foto é comprimida no celular (normalmente fica entre 300 KB e 1,5 MB).
 
 ---
