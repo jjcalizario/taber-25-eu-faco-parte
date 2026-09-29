@@ -91,18 +91,3 @@ O QR Code final aponta para `https://seudominio/25anos`. Baixe em alta resoluç�
 **Limite de upload na Vercel.** O corpo da requisição tem limite de ~4,5 MB; por isso a foto é comprimida no celular (normalmente fica entre 300 KB e 1,5 MB).
 
 ---
-
-## Estrutura
-
-```
-supabase/migrations/001_estrutura.sql   banco, segurança, bucket
-supabase/seed_demo.sql                  relatos de demonstração
-public/brand/                           arquivos oficiais da identidade 25 anos
-src/lib/tv-layout.ts                    palco 2688×1008, área segura, encaixe e divisão de textos
-src/components/tv/                      cenas do LED (usadas no /tv e na prévia do painel)
-src/app/api/relatos/                    recebimento de relatos e fotos
-src/app/api/tv/                         feed e imagens liberadas para o telão
-src/app/admin/                          painel e ações protegidas
-```
-
-Ajustes rápidos: textos das categorias em `src/lib/categorias.ts`; paleta em `tailwind.config.ts`; tamanhos e colunas do LED em `src/lib/tv-layout.ts`.
