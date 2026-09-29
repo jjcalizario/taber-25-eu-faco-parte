@@ -13,7 +13,7 @@ export default async function Obrigado({ searchParams }: { searchParams: Promise
           Seu relato será analisado pela nossa equipe antes de aparecer nos telões.
         </p>
         <p className="mt-14 text-[1.05rem] font-extrabold uppercase leading-snug tracking-[0.01em]">
-          25 anos. Uma história que continua sendo escrita.
+          Taber 25 anos | 23 a 25 de Outubro
         </p>
         <Link
           href="/"
