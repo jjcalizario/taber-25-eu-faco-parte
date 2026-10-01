@@ -220,10 +220,10 @@ export function CenaEspera({ transicaoMs }: { transicaoMs: number }) {
     <div className="absolute inset-0 flex flex-col items-center justify-center text-white" style={estilo}>
       <div data-fase="visivel" className="flex flex-col items-center" style={{ gap: 56 }}>
         <p className="tv-anim" style={{ fontSize: 112, fontWeight: 800, lineHeight: 1, letterSpacing: "-0.015em", margin: 0 }}>
-          Você faz parte dessa história.
+          Você faz parte dessa história!
         </p>
         <p className="tv-anim tv-atraso-1" style={{ fontSize: 50, fontWeight: 400, margin: 0, opacity: 0.92 }}>
-          25 anos. Uma história que continua sendo escrita.
+          25 anos de milagres, histórias e gratidão.
         </p>
       </div>
     </div>
