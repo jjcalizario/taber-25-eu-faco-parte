@@ -164,14 +164,14 @@ export function FormRelato({ categoria, pergunta, dica }: { categoria: Categoria
           value={relato}
           onChange={(e) => setRelato(e.target.value)}
           rows={7}
-          maxLength={LIMITE_RELATO + 200}
+          maxLength={LIMITE_RELATO}
           aria-invalid={!!erros.relato}
           aria-describedby={`${id}-relato-dica ${id}-relato-contador${erros.relato ? ` ${id}-relato-erro` : ""}`}
           className={`${campo} ${borda(erros.relato)} min-h-[200px] resize-y py-3 leading-relaxed`}
         />
         <div className="mt-2 flex items-start justify-between gap-4 text-sm">
           <p className="text-vinho/70">
-            {tamanho > AVISO_TEXTO_LONGO ? "Textos longos aparecem em mais de uma tela no telão." : ""}
+            {tamanho > AVISO_TEXTO_LONGO ? "Texto longo" : ""}
           </p>
           <p id={`${id}-relato-contador`} className={`shrink-0 tabular-nums ${tamanho > LIMITE_RELATO ? "font-bold text-[#9b2c2b]" : "text-vinho/60"}`}>
             {tamanho}/{LIMITE_RELATO}

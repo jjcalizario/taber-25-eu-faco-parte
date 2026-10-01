@@ -2,7 +2,7 @@ import { z } from "zod";
 import { CATEGORIAS } from "./categorias";
 import { limparTexto } from "./sanitizar";
 
-export const LIMITE_RELATO = 1500;
+export const LIMITE_RELATO = 1000;
 export const MINIMO_RELATO = 20;
 export const LIMITE_NOME = 80;
 export const LIMITE_IMAGEM_BYTES = 10 * 1024 * 1024;

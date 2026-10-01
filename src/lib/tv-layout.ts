@@ -21,8 +21,8 @@ export const COLUNAS = {
 const ALTURA_BLOCO = 780;              // altura útil do bloco (título + relato + assinatura) dentro da área segura
 const ENTRELINHA = 1.24;
 const LARGURA_MEDIA_CARACTERE = 0.54;  // Proxima Nova Semibold ≈ 0,52em; margem extra para fontes substitutas
-const TAMANHOS = [92, 82, 74, 66, 60]; // escala tipográfica do relato (px de design)
-const TAMANHO_PAGINADO = 64;           // textos longos são divididos em telas nesse tamanho
+const TAMANHOS = [92, 82, 74, 66, 60, 54, 50, 46, 42]; // reduz a fonte antes de dividir em telas
+const TAMANHO_PAGINADO = 38;                            // só divide se nem em 42px couber
 
 export type LayoutRelato = {
   comImagem: boolean;
